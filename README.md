@@ -1,5 +1,5 @@
 ## eyetracking.py
-This is an interface for the Mirametrix eye tracker unit  
+This is a python interface for the Mirametrix eye tracker unit  
 The unit has two infrared cameras and a built-in tcp server over a serial connection   
 The unit's built-in server waits to receive XML statements   
 that contain eye tracking parameters before it starts to send eye data   
