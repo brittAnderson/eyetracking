@@ -1,12 +1,5 @@
-## eyetracking.py
-This is a python interface for the Mirametrix eye tracker unit  
-The unit has two infrared cameras and a built-in tcp server over a serial connection   
-The unit's built-in server waits to receive XML statements   
-that contain eye tracking parameters before it starts to send eye data   
-It then transmits XML statements at ~60hz which could be written to a file   
-or otherwise manipulated. this script allows someone to start and stop   
-the eyetracking unit by calling start_eyetracking() and stop_eyetracking()   
-from within their own python code, by using the line "import eyetracking.py"   
-usually their code would be displaying images on the screen   
-for which they want viewer's eye position to be tracked   
-in a psychology research setting  
+Eyetracking.py is a Python script that I was hired to write back in 2013 by a Psychology professor. He had many students who were struggling to use an eye tracker in their research. An eye tracker is a device that has two infrared cameras, and attaches to a computer screen. It tracks eye movement while people view the computer screen - so you could control the mouse using your eyes, for example. 
+
+The eye tracker unit has a built-in server - it transmits and receives its information as XML statements over TCP. We also had a Linux computer, running Windows inside a virtual machine, running eye tracking software that also responds to xml statements over TCP. The windows software was very limited and the students simply wanted the x,y position on the screen over time.  The students were psychology students - they were using Python to run their experiments. They wanted to display things on the screen using python, so they could study eye movement under different conditions, but they were not tech-savvy enough and they could not figure out how to connect to the camera and run their python scripts at the same time. 
+
+This script handles the communication with the eye tracker unit over TCP/IP. The script is designed to be imported as a module into the researchers' Python code, and it makes it easier for his students to start and stop the eye tracker unit by calling start_eyetracking() and stop_eyetracking(). It also manipulates the XML statements and writes them to an output file. By using this script, the researchers can focus on designing their own experiment without having to understand how the eyetracker connects.
